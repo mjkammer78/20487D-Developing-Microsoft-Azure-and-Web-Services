@@ -21,6 +21,8 @@ namespace BlueYonder.Flights.Service.Controllers
             _destinations.Add(new Destination { Id = 3, CityName = "Amsterdam", Airport = "Schiphol" });
             _destinations.Add(new Destination { Id = 4, CityName = "London", Airport = "Heathrow" });
             _destinations.Add(new Destination { Id = 5, CityName = "Paris", Airport = "Charles De Gaulle" });
+            _destinations.Add(new Destination { Id = 6, CityName = "Milan", Airport = "Malpensa" });
+            _destinations.Add(new Destination { Id = 7, CityName = "Rome", Airport = "Leonardo da Vinci-Fiumicino" });
         }
 
         // GET api/destinations
@@ -54,7 +56,7 @@ namespace BlueYonder.Flights.Service.Controllers
         public void Put(int id, [FromBody] Destination value)
         {
             Destination result = _destinations.FirstOrDefault(x => x.Id == id);
-            if(result != null)
+            if (result != null)
             {
                 result.Airport = value.Airport;
                 result.CityName = value.CityName;

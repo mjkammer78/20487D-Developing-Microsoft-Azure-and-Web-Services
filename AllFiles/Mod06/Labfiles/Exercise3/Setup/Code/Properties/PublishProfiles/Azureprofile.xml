@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile profileName="" publishMethod="MSDeploy" publishUrl="" msdeploySite="" userName="" userPWD="" destinationAppUrl="" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+  <publishProfile profileName="blueyondermka - Web Deploy" publishMethod="MSDeploy" publishUrl="blueyondermka.scm.azurewebsites.net:443" msdeploySite="blueyondermka" userName="$blueyondermka" userPWD="w6gYmj0qZjPgzoo6bSpEBXWMrgPA2R0aMaELumcJzQmp2kgyHlEjdfFFDQ9g" destinationAppUrl="http://blueyondermka.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
     <databases />
   </publishProfile>
-  <publishProfile profileName="" publishMethod="FTP" publishUrl="" ftpPassiveMode="True" userName="" userPWD="" destinationAppUrl="" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+  <publishProfile profileName="blueyondermka - FTP" publishMethod="FTP" publishUrl="ftp://waws-prod-am2-309.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="blueyondermka\$blueyondermka" userPWD="w6gYmj0qZjPgzoo6bSpEBXWMrgPA2R0aMaELumcJzQmp2kgyHlEjdfFFDQ9g" destinationAppUrl="http://blueyondermka.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
     <databases />
   </publishProfile>
 </publishData>

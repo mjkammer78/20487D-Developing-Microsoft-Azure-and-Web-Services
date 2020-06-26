@@ -23,6 +23,8 @@ namespace BlueYonder.Flights.Service.Middleware
 
         public async Task Invoke(HttpContext httpContext)
         {          
+            string tenant = _configuration["BLUEYONDER_TENANT"] ?? "Localhost";
+            httpContext.Response.Headers.Add("X-Tenant-ID", tenant);
             await _next(httpContext);
         }       
     }
