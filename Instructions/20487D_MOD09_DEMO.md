@@ -51,6 +51,10 @@
    - In the **Sign-on URL** box, enter **https://localhost:5001/signin-oidc**.
    - Click **Create**.
 4. Copy the **Application ID**. This is the Client ID.
+ See also (applies to following steps): https://docs.microsoft.com/nl-nl/azure/active-directory/develop/app-registrations-training-guide-for-app-registrations-legacy-users
+ Note1: during creation - choose => Supported account types - choose 'Accounts in any organisational directory ( .. ) and personal Microsoft accounts ( .. )'
+ Note2: under Authentication => Implicit grant, choose 'ID tokens'
+
 5. Close the registered app window.
 6. Click **Endpoints**, copy one of the links, and then extract the GUID. This is the TenentID.
 

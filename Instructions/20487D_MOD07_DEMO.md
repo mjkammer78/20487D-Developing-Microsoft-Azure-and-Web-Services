@@ -28,6 +28,9 @@
 14. In the **Public access level** list, select **Private (no anonymous access)**.
 15. Click **OK**.
 16. In the left pane, in the **SETTINGS** section, click **Access keys**.
+
+Note: cannot be found via the container, need to navigate to Storage Account -> Access Keys
+
 17. Copy the **Key1** Connection string value.
 18. Open the command prompt.
 19. To change the directory, run the following command:
@@ -102,6 +105,9 @@
 28. In the **Containers** pane, click **bacpaccontainer**, click the **Mod7Demo2DB.bacpac** file, and then click **Select**.
 29. In the **Password** box, type **Password123!**.
 30. Click **OK**.
+
+Note: this WILL FAIL - need to add the storage account blob server IP address to whitelisted IP addresses first (see errorlog for IP address, and skip ahead to steps 33-35 then return)
+
 31. After the database is created, in the left pane, click **SQL databases**.
 32. Click **Mod7Demo2DB**.
 33. Click **Set server firewall**.
@@ -177,8 +183,15 @@
 11. On the top bar, click **+ Add Graph**.
 12. In **Database id**, select **Create new**, and then type **mygraphgdb**.
 13. In **Graph Id**, type **taskManager**, and then click **OK**.
+
+Note: not working since a partitioning key is required (and /id or /label prohibited)
+
 14. Expand **mygraphdb** and click **taskManager**. 
 15. To upload all the data with the JSON file, on the top bar, click **Upload**.
+
+Note: upload seems to be deprecated, can only insert data using the gremlin API (programmatically, e.g. running via C# instructions -
+Seealso: https://docs.microsoft.com/nl-nl/azure/cosmos-db/create-graph-dotnet)
+
 16. click **folder**, in *[Repository Root]***\Allfiles\Mod07\DemoFiles\Mod7Demo4Assets**, select the **GraphData.json** file, and then click **Open**.
 17. Click **Upload**.
 18. Expand **taskManager**, and then click **Graph**.
@@ -221,6 +234,10 @@
 21. Copy the primary endpoint value for later use.
    >**Note**: You can now browse to the primary endpoint to view **index.hml** or **airplane1.jpg**.
 22. In the left menu, click **+ Create a resource**.
+
+NOTE: BEFORE CREATING CDN, need to register Microsoft.Cdn as a 'registered provider' for the Subscription being used (Subscription -> Resource providers -> search -> register)
+Seealso: "In order to create this CDN profile, please ensure that Microsoft.CDN is listed as a registered Resource Provider in your Azure subscription"
+
 23. In the **search** box, type **CDN**, and then click **Create**.
 24. In **CDN profile**, in **Name**, type **MyCDNProfile**{YourInitials}.
 25. In **Resource group**, select **Use existing**, and then select **Mod7Demo5ResourceGroup**.
@@ -240,6 +257,12 @@
 37. In the **Network** tab, click **airplane1.jpg** and in **Response Headers**, verify that **x-cache: HIT** is not present.
 38. Refresh the page five times.
 39. In **Response Headers**, verify that **x-cache: HIT** is present.
+
+Note: works best in Chrome browser, unreliable in Edge (both have identical request headers, but return different response headers :( 
+Edge returns 304 - condition not met , over 'Server: Windows-Azure-Web/1.0 Microsoft-HTTPAPI/2.0'
+/ Chrome returns 304 - X-Cache:HIT, over 'server: ECAcc (ama/8AEC)'. Edge seems to need warmup time to add X-Cache:HIT)
+
+
 40. Close all windows.
 
 # Lesson 5: Scaling with Out-of-Process Cache
@@ -251,6 +274,9 @@
 1. Open the Azure portal.
 2. In the left pane, click **+ Create a resource**.
 3. In the **search** box, type **Redis Cache**, and then click **Create**.
+
+Note: now labelled 'Azure Cache for Redis'
+
 4. In **DNS name**, type **mod7demo6redis**{YourInitials}.
 5. In **Resource Group**, select **Create new**, in the **Name** box type **Mod07Demo6ResourceGroup** ad then click **OK**.
 6. Click **Create**, and then wait until the service is created.

@@ -316,6 +316,10 @@
                 .UseStartup<Startup>()
                 .UseApplicationInsights();
     ```
+	
+	Note: the preferred approach is now instead to call services.AddApplicationInsightsTelemetry() in Startup -> ConfigureServices method.
+	
+	
 14. Switch to the command prompt.
 15. To publish the service, paste the following command:
     ```bash

@@ -73,7 +73,7 @@
 3. Click the **blueyonderMod10Demo**{YourInitials} service.
 4. In the **Settings** section, click **Application Insights**.
 5. Click **Setup Application Insights**, Select **Create new resource**.
-6. In **Runtime/Framework**, select **ASP.NET Core**.
+6. In **Runtime/Framework**, select (**ASP.NET Core**).  => .NET Core
 7. Click **OK** and then click **OK**, and wait until all the changes are saved.
 8. In the **Settings** section, click **Scale out (App Service plan)**.
 9. Click **Enable autoscale**.
@@ -93,7 +93,7 @@
     ```
 18. When Prompted for Enter service **uri** ,Enter the Azure app service uri copied eralier and then press **Enter**.
 19. Wait for five minutes, and then switch to the Azure portal.
-20. Click the **Run history** tab.
+20. Click the **Run history** tab.  (this is part of Scale out tab under App Service Settings)
 21. In the **scaling** table, under **OPERATION NAME**, verify that the value is **Autoscale scale up completed**.
 22. Wait for another five minutes.
 23. In the **scaling** table, under **OPERATION NAME**, verify that the value is **Autoscale scale down completed**.

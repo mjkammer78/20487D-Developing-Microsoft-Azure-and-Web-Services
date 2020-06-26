@@ -97,11 +97,15 @@
     ```
 16. Switch to Azure Portal.
 17. Click **Virtual machines**, and then select **myvm**.
+
+18-21. Note: forget about these steps, seems to be deprecated. Use PuTTy client instead and login using ssh to the machine/user combination found in azurevm details.
+
 18. In the top panel, click **Connect** and copy the **Login using VM local account** value.
 19. Switch to the command prompt.
 20. Paste the **Login using VM local account** value and press Enter.
 21. At the command prompt, enter **yes**.
 22. Type the password **Password123!**.
+
 23. To switch the directory to **var** folder, paste the following command:
     ```bash
     cd /var
@@ -124,6 +128,9 @@
     scp -r .\ubuntu.16.10-x64\ myadmin@<server_IP_address>:/var/demo
     ```
     >**Note**: Change *\<server_IP_address\>* with the IP address of your virtual machine.
+	
+	Note: can also be performed using pscp.exe (PuTTy commandline tools extensions)
+	
 29. Type the following password **Password123!** and press Enter.
 30. Switch to the command prompt that connected to the virtual machine.
 31. To switch the directory to the **Root** folder, run the following command:
@@ -245,9 +252,17 @@ To present this demonstration, you must have a Microsoft account. If you have no
     - Password: **Password123**
     - Confirm Password: **Password123**
     - Click **Save Git Credentials**.
+	
+	Note: can only be generated randomized for existing account, here:
+	maurits.kammer
+	5fgrbndidy7ds3naa5djdwb3bmbnvtd5vbsgxkva4bzriyh3n5ca
+	
 12. In the left blade, click **Pipelines**.
 13. Click **New pipeline**.
 14. In **Where is your code**, choose **Use the visual designer**.
+
+Note: is now labeled: Classic editor
+
 15. In **Select a source**, choose **Azure Repos Git**.
 16. In **Repository** select **MyApp**.
 17. Then click **continue**.
@@ -345,7 +360,7 @@ To present this demonstration, you must have a Microsoft account. If you have no
 8. Click **mod6demo4**{YourInitials} app service. 
 9. To add credentials to the app service, under the **DEPLOYMENT** section, click **Deployment center**, in the open page select **FTP**, click **Dashboard** and then enter the following information:
     - In **FTP** Pane click **User Credentials**, in the **username** box type **FTPMod6Demo4**{YourInitials}.
-    - In the **Password** and **Confirm password** boxes, type **Password99**.
+    - In the **Password** and **Confirm password** boxes, type **Password123!**.
     - Click **Save Credentials**.
 10. On the left blade menu, under the **DEPLOYMENT** section, click **Deployment slots**.
     - Click **Add Slot** and provide the following information:

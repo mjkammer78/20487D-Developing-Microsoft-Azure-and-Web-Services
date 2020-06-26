@@ -153,7 +153,7 @@
 1. Open the Command Prompt window.
 2. To create a new Web App, at the command prompt, paste the following command, and then press Enter:
     ```bash
-      dotnet new webapi --name BlueYonder.Hotels.Service --output [RepositoryRoot]\Allfiles\Mod05\DemoFiles\Host_In_Docker
+      dotnet new webapi --name BlueYonder.Hotels.Service --output [RepositoryRoot]\Allfiles\Mod05\DemoFiles\Host_In_Docker -f netcoreapp2.1 --force
     ```
 3. To change the directory to the **Host_In_Docker** folder, at the command prompt, run the following command:
     ```bash
@@ -195,6 +195,13 @@
 7. To build your project by using **DockerFile** that you created earlier, paste the following command, and then press Enter:
     ```bash
         docker build -t hotels_service -f Host_In_Docker\DockerFile .
+		
+	Note: when encountering path issues, move to subdirectory and run command 'docker build --tag hotels_service .' (+need to adjust COPY steps in dockerfile for relative path)
+	
+	Note: need to set projecttype <OutputType>Library</OutputType> in .csproj file to successfully compile using csc
+	
+	Note: diagnose (intermediate) docker build step, use command similar to 'docker run -it d4f713b7710b bash' where d4.. => buildstep hash (see docker output)
+		
     ```
 8. To run the docker container which is listening on a default port, paste the following command, and then press Enter:
     ```bash
