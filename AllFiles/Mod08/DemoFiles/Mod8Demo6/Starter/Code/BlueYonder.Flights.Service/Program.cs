@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace ApplicationInsights
+namespace BlueYonder.Flights.Service
 {
     public class Program
     {
@@ -19,7 +19,7 @@ namespace ApplicationInsights
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseApplicationInsights(); 
+                .UseApplicationInsights()
+                .UseStartup<Startup>();
     }
 }

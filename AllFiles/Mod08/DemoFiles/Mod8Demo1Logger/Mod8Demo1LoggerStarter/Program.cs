@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace ApplicationInsights
+namespace Mod8Demo1LoggerStarter
 {
     public class Program
     {
@@ -20,6 +20,10 @@ namespace ApplicationInsights
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseApplicationInsights(); 
+                .ConfigureLogging((hostingContext, logging) =>
+                {
+                    logging.AddConsole();
+                    logging.AddEventSourceLogger();
+                });
     }
 }
