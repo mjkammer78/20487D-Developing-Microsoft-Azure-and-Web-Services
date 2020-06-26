@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
+using BlueYonder.Flights.Service.Middleware;
+
 namespace BlueYonder.Flights.Service
 {
     public class Startup
@@ -39,6 +41,8 @@ namespace BlueYonder.Flights.Service
             {
                 app.UseHsts();
             }
+
+            app.UseMachineNameMiddleware();
 
             app.UseHttpsRedirection();
             app.UseMvc();

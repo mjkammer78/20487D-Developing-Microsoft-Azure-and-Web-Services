@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile profileName="" publishMethod="MSDeploy" publishUrl="" msdeploySite="" userName="" userPWD="" destinationAppUrl="" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+  <publishProfile profileName="blueyondermod10lab2t2mka - Web Deploy" publishMethod="MSDeploy" publishUrl="blueyondermod10lab2t2mka.scm.azurewebsites.net:443" msdeploySite="blueyondermod10lab2t2mka" userName="$blueyondermod10lab2t2mka" userPWD="PqREfpvwygmobidDZeikvCE6JJNzch2e5H1ys96fHoNgscCF4CQ8Jrqmp9n0" destinationAppUrl="http://blueyondermod10lab2t2mka.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
     <databases />
   </publishProfile>
-  <publishProfile profileName="" publishMethod="FTP" publishUrl="" ftpPassiveMode="True" userName="" userPWD="" destinationAppUrl="" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+  <publishProfile profileName="blueyondermod10lab2t2mka - FTP" publishMethod="FTP" publishUrl="ftp://waws-prod-bay-113.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="blueyondermod10lab2t2mka\$blueyondermod10lab2t2mka" userPWD="PqREfpvwygmobidDZeikvCE6JJNzch2e5H1ys96fHoNgscCF4CQ8Jrqmp9n0" destinationAppUrl="http://blueyondermod10lab2t2mka.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
     <databases />
   </publishProfile>
 </publishData>
