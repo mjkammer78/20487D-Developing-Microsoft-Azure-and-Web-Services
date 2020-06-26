@@ -11,4 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HttpClientApplication.Host\HttpClientApplication.Host.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.6" />
+  </ItemGroup>
 </Project>

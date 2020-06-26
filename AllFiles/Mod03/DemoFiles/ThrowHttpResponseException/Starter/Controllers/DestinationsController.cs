@@ -30,5 +30,14 @@ namespace ThrowHttpResponseException.Host.Controllers
             return _destinations;
         }
 
+        // GET api/destinations/id
+        [HttpGet("{id}")]
+        public ActionResult<Destination> Get(int id)
+        {
+            Destination result = _destinations.FirstOrDefault(x => x.Id == id);
+            if (result == null)
+                return NotFound();
+            return result;
+        }
     }
 }

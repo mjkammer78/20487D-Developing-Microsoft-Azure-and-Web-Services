@@ -42,6 +42,7 @@ namespace JQuaryClient
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseStaticFiles();
         }
     }
 }
