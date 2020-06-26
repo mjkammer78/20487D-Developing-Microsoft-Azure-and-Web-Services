@@ -5,10 +5,11 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using BlueYonder.Hotels.DAL.Repository;
 
 namespace BlueYonder.Hotels.DAL.Repository
 {
-    public class HotelBookingRepository
+    public class HotelBookingRepository : IHotelBookingRepository
     {
         private DbContextOptions<HotelsContext> _options;
 

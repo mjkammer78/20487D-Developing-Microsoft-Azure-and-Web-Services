@@ -13,32 +13,32 @@ namespace BlueYonderHotels.Service.Controllers
     [ApiController]
     public class HotelBookingController : ControllerBase
     {
-        private readonly HotelBookingRepository _hotelBookingRepository;
+        private readonly IHotelBookingRepository _hotelBookingRepository;
 
-        public HotelBookingController()
+        public HotelBookingController(IHotelBookingRepository hotelBookingRepository)
         {
-            _hotelBookingRepository = new HotelBookingRepository();
+            _hotelBookingRepository = hotelBookingRepository;
         }
 
-
+        [Cache("X-No-Cache")]
         [HttpGet("Availability/{date}")]
         public IEnumerable<Room> GetAvailability(DateTime date)
         {
             return _hotelBookingRepository.GetAvaliabileByDate(date);
         }
-        
+
         [HttpGet("Reservation")]
         public IEnumerable<Reservation> GetReservation()
         {
             return _hotelBookingRepository.GetAllReservation();
         }
 
-        
+
         [HttpDelete("Reservation/{reservationId}")]
         public async Task DeleteReservation(int reservationId)
         {
             await _hotelBookingRepository.DeleteReservation(reservationId);
         }
-       
+
     }
 }
