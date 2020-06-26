@@ -13,11 +13,11 @@ namespace BlueYonder.Flights.Service.Controllers
     [ApiController]
     public class PassengerController : ControllerBase
     {
-        private readonly PassengerRepository _passengerRepository;
+        private readonly IPassengerRepository _passengerRepository;
 
-        public PassengerController()
+        public PassengerController(IPassengerRepository passengerRepository)
         {
-            _passengerRepository = new PassengerRepository();
+            _passengerRepository = passengerRepository;
         }
 
         // GET api/passenger

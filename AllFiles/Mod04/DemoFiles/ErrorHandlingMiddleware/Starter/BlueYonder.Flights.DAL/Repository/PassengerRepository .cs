@@ -25,7 +25,10 @@ namespace BlueYonder.Flights.DAL.Repository
             using (PassengerDbContext context = new PassengerDbContext())
             {
                 Passenger passenger = await context.Passengers.FirstOrDefaultAsync(b => b.PassengerId == passengerId);
-                
+
+                if (passenger == null)
+                    throw new KeyNotFoundException();
+
                 return passenger;
             }
         }

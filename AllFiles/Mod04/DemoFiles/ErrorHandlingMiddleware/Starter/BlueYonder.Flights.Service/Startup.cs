@@ -27,7 +27,7 @@ namespace BlueYonder.Flights.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +41,9 @@ namespace BlueYonder.Flights.Service
             {
                 app.UseHsts();
             }
+
+            //app.UseExceptionHandler(h => {});
+            app.UseExceptionHandlingMiddleware();
             app.UseHttpsRedirection();
             app.UseMvc();
         }

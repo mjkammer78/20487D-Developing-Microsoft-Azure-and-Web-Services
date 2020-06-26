@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace BlueYonder.Flights.DAL.Repository
 {
-    public class PassengerRepository
+    public class PassengerRepository : IPassengerRepository
     {
         public async Task<IEnumerable<Passenger>> GetAllPassengers()
         {
@@ -25,7 +25,7 @@ namespace BlueYonder.Flights.DAL.Repository
             using (PassengerDbContext context = new PassengerDbContext())
             {
                 Passenger passenger = await context.Passengers.FirstOrDefaultAsync(b => b.PassengerId == passengerId);
-                
+
                 return passenger;
             }
         }

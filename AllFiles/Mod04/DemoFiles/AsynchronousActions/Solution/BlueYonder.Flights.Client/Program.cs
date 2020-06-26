@@ -20,7 +20,7 @@ namespace BlueYonder.Flights.Client
             using (FileStream imageFile = File.OpenRead(directoryPath))
             {
                 HttpResponseMessage httpResponse = await UploadImageAsync(imageFile, url);
-                Console.WriteLine($"Http Respone");
+                Console.WriteLine($"Http Response");
                 Console.WriteLine($"IsSuccess = {httpResponse.IsSuccessStatusCode}");
                 Console.WriteLine($"Status Code = {httpResponse.StatusCode}");
             }
