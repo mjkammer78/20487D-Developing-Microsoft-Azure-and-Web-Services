@@ -23,7 +23,7 @@ namespace BlueYonder.Hotels.Service.Controllers
             _container = blogClient.GetContainerReference("vouchers");
         }
 
-       
+
         [HttpGet("Voucher/{id}")]
         public async Task<ActionResult<string>> GetVoucher(Guid id)
         {
@@ -33,13 +33,14 @@ namespace BlueYonder.Hotels.Service.Controllers
                 string voucherResult = await blockBlob.DownloadTextAsync();
                 return voucherResult;
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return NotFound();
             }
         }
 
-        
+
         [HttpPost("CreateVoucher")]
         public async Task<ActionResult<Guid>> CreateVoucher([FromBody] string name)
         {
@@ -53,7 +54,7 @@ namespace BlueYonder.Hotels.Service.Controllers
             return voucherId;
         }
 
-        private System.IO.MemoryStream GeneratedVoucher(string name,Guid voucherId)
+        private System.IO.MemoryStream GeneratedVoucher(string name, Guid voucherId)
         {
             System.IO.MemoryStream stream = new MemoryStream();
             StreamWriter writer = new StreamWriter(stream);
