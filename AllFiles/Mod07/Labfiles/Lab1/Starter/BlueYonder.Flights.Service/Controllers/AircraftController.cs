@@ -13,7 +13,7 @@ namespace BlueYonder.Flights.Service.Controllers
     [ApiController]
     public class AircraftController : ControllerBase
     {
-        private string _baseUrl = "https://blueyonder{YourInitials}.blob.core.windows.net/aircraft-images/";
+        private string _baseUrl = "https://blueyondermka.blob.core.windows.net/aircraft-images/";
         
         [HttpGet("Image/{photoName}")]
         public ActionResult<string> GetImage(string photoName)

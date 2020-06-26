@@ -7,6 +7,7 @@ using BlueYonder.Flights.DAL.Repository;
 using BlueYonder.Flights.DAL.Models;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
+using StackExchange.Redis;
 
 namespace BlueYonder.Flights.Service.Controllers
 {
@@ -15,10 +16,12 @@ namespace BlueYonder.Flights.Service.Controllers
     public class FlightsController : ControllerBase
     {
         private readonly IFlightsRepository _flightsRepository;
-        
-        public FlightsController(IFlightsRepository flightsRepository)
+        private readonly IDatabase _redisDB;
+
+        public FlightsController(IConnectionMultiplexer connectionMultiplexer, IFlightsRepository flightsRepository)
         {
             _flightsRepository = flightsRepository;
+            _redisDB = connectionMultiplexer.GetDatabase();
         }
 
         [HttpGet]
@@ -28,12 +31,26 @@ namespace BlueYonder.Flights.Service.Controllers
         }
 
         [HttpGet("{source}/{destination}/{date}")]
-        public ActionResult<string> Get(string source,string destination,DateTime date)
+        public ActionResult<string> Get(string source, string destination, DateTime date)
         {
-           
-            var result = _flightsRepository.GetFlightByDate(source, destination, date);
-            return Ok(result);
-         }
+            var key = source + destination + date.Date.ToShortDateString();
+
+            var cacheResult = _redisDB.StringGet(key);
+
+            //cache - miss
+            if (!cacheResult.HasValue)
+            {
+                var result = _flightsRepository.GetFlightByDate(source, destination, date);
+                if (result == null)
+                    return NotFound();
+                _redisDB.StringSet(key, JsonConvert.SerializeObject(result));
+                return Ok(result);
+            }
+
+            //cache - hit
+            Request.HttpContext.Response.Headers.Add("X-Cache", "true");
+            return Ok(cacheResult.ToString());
+        }
 
         // POST api/values
         [HttpPost]
