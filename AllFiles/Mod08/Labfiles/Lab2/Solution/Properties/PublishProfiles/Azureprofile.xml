@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile profileName="blueyondermod08lab2roiggga - Web Deploy" publishMethod="MSDeploy" publishUrl="blueyondermod08lab2roiggga.scm.azurewebsites.net:443" msdeploySite="blueyondermod08lab2roiggga" userName="$blueyondermod08lab2roiggga" userPWD="Lhjtp7vBAkaZEE9nn8QkxdFq9ugMrrZpqvD42tQMhkl9unjbuRM7iQrr3dZG" destinationAppUrl="http://blueyondermod08lab2roiggga.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+  <publishProfile profileName="blueyondermod08lab2mka - Web Deploy" publishMethod="MSDeploy" publishUrl="blueyondermod08lab2mka.scm.azurewebsites.net:443" msdeploySite="blueyondermod08lab2mka" userName="$blueyondermod08lab2mka" userPWD="225De0qJnRm9W8eRX16Gsd9tF9keYmsLoZMq2jlopezpYpiw3mnkjwdXtoA7" destinationAppUrl="http://blueyondermod08lab2mka.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
     <databases />
   </publishProfile>
-  <publishProfile profileName="blueyondermod08lab2roiggga - FTP" publishMethod="FTP" publishUrl="ftp://waws-prod-am2-201.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="blueyondermod08lab2roiggga\$blueyondermod08lab2roiggga" userPWD="Lhjtp7vBAkaZEE9nn8QkxdFq9ugMrrZpqvD42tQMhkl9unjbuRM7iQrr3dZG" destinationAppUrl="http://blueyondermod08lab2roiggga.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+  <publishProfile profileName="blueyondermod08lab2mka - FTP" publishMethod="FTP" publishUrl="ftp://waws-prod-am2-113.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="blueyondermod08lab2mka\$blueyondermod08lab2mka" userPWD="225De0qJnRm9W8eRX16Gsd9tF9keYmsLoZMq2jlopezpYpiw3mnkjwdXtoA7" destinationAppUrl="http://blueyondermod08lab2mka.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
     <databases />
   </publishProfile>
 </publishData>
